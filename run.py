@@ -84,6 +84,16 @@ def update_worksheet(data, worksheet):
     worksheet_to_update.append_row(data)
     print(f"{worksheet} worksheet updated successfully!")
 
+def get_last_5_entries_sales():
+    sales = SHEET.worksheet("sales")
+    columns = []
+    for ind in range(1,7):
+        column = sales.col.value(ind)
+        columns.append(column[-5:])
+
+    return columns
+
+
 
 
 def main():
